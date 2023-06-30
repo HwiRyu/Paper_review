@@ -24,13 +24,10 @@
 >
 >Nearst Method, Bicubic Method, Subsampling 등 여러가지 이미지를 Downscaling하는 방법들이 있지만
 >
->기존의 방식들은 Downscaling하는 과정에서 이미지의 정보를 손실함에 따라 원본 이미지가 무엇이었는지
+>기존의 방식들은 Downscaling하는 과정에서 이미지의 정보를 손실함에 따라
 >
->유추하기도 힘들 정도로 훼손되는 경우가 많다.
+>원본 이미지가 무엇이었는지 유추하기도 힘들 정도로 훼손되는 경우가 많다.
 >
 >이 paper에서는 SLIC, MCDA, Bilateral filter, Laplacian smoothing 등의 기법을 사용하여
 >
 >보다 부드러운 Pixelation을 하는 알고리즘을 소개한다.
-
-
-published : false
