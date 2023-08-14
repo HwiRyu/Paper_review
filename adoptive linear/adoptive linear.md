@@ -1,6 +1,7 @@
-#Paper review: LEARNING ACTIVATION FUNCTIONS TO IMPROVE DEEP NEURAL NETWORKS
+##Paper review: LEARNING ACTIVATION FUNCTIONS TO IMPROVE DEEP NEURAL NETWORKS
 https://arxiv.org/pdf/1412.6830.pdf
 
+#논문 요약
 
 1. 개요
 
@@ -35,6 +36,7 @@ $h_i(x)$는 다음 조건을 만족하는 임의의 piecewise linear function을
 
 S=1, 2로 두고 APL을 학습시킨 예시. 
 
+#고찰
 의문점: hidden layer를 늘리는 것과 학습가능한 Active function을 사용하는 것의 차이가 무엇인가.
 예시로 APL을 적용한 2-depth NN을 구성해보겠다.
 
@@ -70,6 +72,7 @@ Relu의 경우: $d_0 \cdot d_1 + d_1 + d_1 \cdot d_2 + d_2 + d_2 \cdot d_3 + d_3
 여기서도 Active function을 학습시키는 대신, 같은 효과를 낼 수 있는 3-layer 신경망을 구상하자.
 첫번째 layer는 Relu, 두번째 layer는 $(u_0(x) - u_1(x)) \cdot x$ 으로 두자. 그럼 첫번째 layer에서 Relu를 적용시킨 뒤에 나온 값들의 합은 input에 대해 최대 $d_1$개의 불연속점을 갖는 함수가 된다. 이를 $L_1^k(x)$라 하자(이는 1번째 Layer 값들을 2번째 Layer의 k번째 노드로 보낸 값을 의미한다.). 2번째 layer로 보내 Active function으로 $(u_0(x) - u_1(x)) \cdot x$을 적용하면 $(u_0(L_1^k(x)) - u_1(L_1^k(x))) \cdot L_1^k(x)$이 되고, 이때 여기에 도달하기까지의 parameter들을 조절하는 것은 $(u_0(L_1^k(x)) - u_1(L_1^k(x))) \cdot L_1^k(x)$이 어느 구간 에서 x를 출력하고 어느 구간에서 0을 출력하게 할지 결정할 수 있다는 것이다. 2번째 Layer의 각 노드들은 이렇게 원하는 구간에서 identity function이 될지 결정할 수 있고, 이 값들에 weigth와 bias를 적용하여 output으로 보내면 원하는 불연속함수를 만들 수 있게 된다.
 
+#실험
     def forward(self, x):
         k = 1
         for layer in self.fc[0:k]:
