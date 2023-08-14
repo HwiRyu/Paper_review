@@ -54,7 +54,7 @@ Acitve function이 Relu라면, input size와 outputsize가 1일때 memorization 
 
 APL의 경우: $2Sd_1 + d_0 \cdot d_1 + d_1 + d_1 \cdot d_2 + d_2$
 
-= (2S + 3) $\cdot d_1$ + 1
+= $(2S + 3) \cdot d_1$ + 1
 
 Relu의 경우: $d_0 \cdot d_1 + d_1 + d_1 \cdot d_2 + d_2 + d_2 \cdot d_3 + d_3$
 
