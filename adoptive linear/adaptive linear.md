@@ -53,7 +53,7 @@ Acitve function이 Relu라면, input size와 outputsize가 1일때 memorization 
 
 ![Alt text](image.png)
 
-이 신경망에서, parameter의 갯수는 $d_0 \cdot d_1 + d_1 + d_1 \cdot d_2 + d_2 + d_2 \cdot d_3 + d_3$개이다. APL과 Relu 두 신경망 모두 input과 output의 node, 즉 $d_0, d_2(APL), d_3(Relu) = 1$ 이라 하자.즉 APL의 경우 실질적으로 expressivity에 관여하는건 $d_1$와 active function(APL), Relu의 경우 $d_1$과 $d_2$이다. Relu의 경우, $layer_2$가 APL에서의 Adoptive active function의 역할을 하므로, $d_2$ = S 라 하자. 그럼 이 setting에 맞춰 parameter의 갯수를 다시 보면
+이 신경망에서, parameter의 갯수는 $d_0 \cdot d_1 + d_1 + d_1 \cdot d_2 + d_2 + d_2 \cdot d_3 + d_3$개이다. APL과 Relu 두 신경망 모두 input과 output의 node, 즉 $d_0, d_2(APL), d_3(Relu) = 1$ 이라 하자.즉 APL의 경우 실질적으로 expressivity에 관여하는건 $d_1$와 active function(APL), Relu의 경우 $d_1$과 $d_2$이다. Relu의 경우, $layer_2$가 APL에서의 Adaptive active function의 역할을 하므로, $d_2$ = S 라 하자. 그럼 이 setting에 맞춰 parameter의 갯수를 다시 보면
 
 APL의 경우: $2Sd_1 + d_0 \cdot d_1 + d_1 + d_1 \cdot d_2 + d_2$
 
