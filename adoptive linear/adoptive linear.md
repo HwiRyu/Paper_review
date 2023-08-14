@@ -1,6 +1,7 @@
 #Paper review: LEARNING ACTIVATION FUNCTIONS TO IMPROVE DEEP NEURAL NETWORKS
 https://arxiv.org/pdf/1412.6830.pdf
 
+
 1. 개요
 
 일반적으로 ANN은 Fixed된 Active function을 사용한다. 정확하고 빠른 학습이 가능한 Active function을 찾는건 활발히 연구중인 주제다. 본 논문에서는 학습이 가능한 Active function을 정의하고, 이를 사용해 실험한 결과를 소개한다.
@@ -17,7 +18,7 @@ n번째 hidden layer의 node 갯수를 $d_n$개라 하면 이때의 weight와 bi
 
 $$\sum_{k=0}^{n} d_{k+1} \cdot (d_{k}+1)$$ 이 되므로 이는 
 
-2SM = $$2S \cdot \sum_{k=0}^{n} d_k$$ 에 비하면 훨씬 크다. 
+$$2SM = 2S \cdot \sum_{k=0}^{n} d_k$$ 에 비하면 훨씬 크다. 
 
 (해당 부분은 이렇게 정의한 새로운 Active function이 신경망의 연산량에 큰 영향을 주지 않는다고 말하고 싶었던 것 같다.)
 
