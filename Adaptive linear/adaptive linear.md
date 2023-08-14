@@ -65,7 +65,7 @@ Relu의 경우: $d_0 \cdot d_1 + d_1 + d_1 \cdot d_2 + d_2 + d_2 \cdot d_3 + d_3
 
 이 되고, S가 논문에서 비교적 작게 설정한 것을 고려하면, Relu의 경우가 APL의 경우에 비해 parameter가 현저히 적다는 것을 알 수 있다. 이때 Relu의 memorization capacity는 $S\cdot d_1$이 된다. 
 
-그렇다면 굳이 active function을 학습시키지 않아도, hideen layer를 한 층 늘리는 것만으로 더 적은 파라미터로 같은 효과를 얻어낼 수 있는데 왜 굳이 APL이 필요한 것인가? 여기서 나아가 어떤 continous piecewise linear function을 Active function으로 사용해도 Relu 신경망에서 layer를 깊게 쌓으면 같은 효과를 얻을 수 있을 것으로 추측할 수 있다.
+그렇다면 active function을 학습시키지 않아도 hideen layer를 한 층 늘리는 것만으로 더 적은 파라미터로 같은 효과를 얻어낼 수 있는데 왜 APL이 필요한 것인가? 여기서 나아가 어떤 continous piecewise linear function을 Active function으로 사용해도 Relu 신경망에서 layer를 깊게 쌓으면 같은 효과를 얻을 수 있을 것으로 추측할 수 있다.
 
 여기서 발상을 연장해 non-linear function에 근사할 수 있는 2-layer(depth = 2) 신경망을 구상해보자. 만약 active function이 $(u_a(x) - u_b(x)) \cdot x$ (u = Unit step function)이고, 이때 a와 b가 각 node별로 독립적인 parameter라 하자. 그럼 input이 1차원일때 weight와 bias가 input에 적용되어 1차원 input에 대해 어떤 선형함수를 표현할 수 있고, active function $(u_a(x) - u_b(x)) \cdot x$ 을 통해 이 선형함수가 어떤 구간에서 선형함수를 1을 출력하고 그 외에 구간에서 0이 출력되도록 할 수 있다. 여기에 다시 weight와 bias를 적용해 최종적인 output에선 $d_1$개의 불연속점을 갖는 함수를 만들 수 있다. 이 신경망에서 node의 수가 충분히 크면, 유한 불연속점을 갖는 임의의 함수에 근사시킬 수 있다.
 
