@@ -15,7 +15,7 @@ $$h_i(x) = \max(x, 0) + \sum_{s=1}^{S} a_i^s \cdot \max(-x + b_i^s, 0)$$
 이 Active function을 사용해 만든 신경망은 2SM개의 a,b parameter를 학습시켜야 한다. 이때 M은 hidden layer의 node 갯수이며, 이는 기존 parameter인 weight와 bias에 비하면 작다.
 n번째 hidden layer의 node 갯수를 $d_n$개라 하면 이때의 weight와 bias 갯수는
 
-$$\sum_{k=0}^{n} d_k \cdot (d_{k+1}+1)$$ 이 되므로 이는 
+$$\sum_{k=0}^{n} d_{k+1} \cdot (d_{k}+1)$$ 이 되므로 이는 
 
 2SM = $$2S \cdot \sum_{k=0}^{n} d_k$$ 에 비하면 훨씬 크다. 
 
