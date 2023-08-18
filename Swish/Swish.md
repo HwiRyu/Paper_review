@@ -42,7 +42,7 @@ Swish에 trainable한 $\beta$를 parameter로 추가하면
 
 $f(x; β) = 2x · σ(βx)$
 
-처럼 쓸 수 있는데, 이때 $\beta=0$이면 그냥 Linear function이 되고, $\beta \to \infin$이면 Relu와 같아진다.
+처럼 쓸 수 있는데, 이때 $\beta=0$이면 그냥 Linear function이 되고, $\beta \to \infty$이면 Relu와 같아진다.
 따라서 이런 $Swish - \beta$를 Linear function과 Relu 사이에서 비선형보간하는 것으로 볼 수 있다.
 
 Swish를 Relu로 대체하는 것은 신경망에서 Relu 대신 Swish로 교체하기만 하면 되기 때문에 간단하다.(Relu보다 학습률은 조금 낮춰하는게 잘 되는 것을 확인했다.)
