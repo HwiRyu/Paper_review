@@ -18,14 +18,15 @@ D는 어떤 지폐가 input되면 그 지폐가 참인지 거짓인지 판별하
 
 # Adversarial nets
 
-$\min_G \max_D V(D, G) = \mathbb{E}_{x \sim p_{\text{data}}(x)} [\log D(x)] + \mathbb{E}_{z \sim p_z(z)} [\log(1 - D(G(z)))]$
+$\min_G \max_D V(D, G) = E_{x \sim p_{data}(x)}Log D(x) + E_{x \sim p_{z}(z)} Log(1-D(G(z)))$
+
 
 $G(z; \theta_g)$ is differentiable function.
 $D(x; \theta_d)$ outputs a single scalar.
 
 G는 random noise의 분포 $p_z(z)$에서 z를 input받아 $p_g$를 만들고,
 
-D는 data들의 x를 input받아 이것이 $p_data$로부터 온건지 $p_g$로부터 온건지 구분한다.
+D는 data들의 x를 input받아 이것이 $p_{data}$로부터 온건지 $p_g$로부터 온건지 구분한다.
 
 GAN을 학습시킨다는 것은 곧 위 공식을 사용한 minmax game을 하는 것과 같다. 다음 section에서 충분한 capacity 하에서(parametric limit이 없다면) G가 D를 속일만큼의 분포를 생성해낼 수 있음을 보인다.
 
@@ -66,7 +67,8 @@ data와 sample을 동시에 사용하여 D를 학습시키고, 그다음 G를 �
 
 Proposition 1. For G fixed, the optimal discriminaotr D is
 
-$D^*_G(x) = \frac {p_{data}(x)}{p_{data}(x) + p_g(x)}$
+$D_G(x) = \frac {p_{data}(x)}{p_{data}(x) + p_g(x)}$
+
 (즉, input data $x$에 대해 data의 분포와 sample의 분포가 멀수록 D는 더 잘 classification 한다.)
 
 Proof.
@@ -83,11 +85,11 @@ $=\int_x p_{\text{data}}(x) \log(D(x)) + p_g(x) \log(1 - D(x))dx$
 
 를 maximize하는 것이다. 여기서 위 식을 아래 식과 같이 표현할 수 있는건 Fiexd된 G에 대해 두 기댓값이 같기 때문이다. 즉
 
-$\mathbb{E}_{z \sim p_z(z)} \left[ \log(1 - D(G(z))) \right] = \mathbb{E}_{x \sim p_g(x)} \left[ \log(1 - D(x)) \right]$ 이기 때문이다.
+$E_{z \sim p_z(z)} \left[ \log(1 - D(G(z))) \right] = E_{x \sim p_g(x)} \left[ \log(1 - D(x)) \right]$ 이기 때문이다.
 
 위 식은 미분하면 
 
-$D^*_G(x) = \frac {p_{data}(x)}{p_{data}(x) + p_g(x)}$
+$D_G(x) = \frac {p_{data}(x)}{p_{data}(x) + p_g(x)}$
 
 에서 최댓값을 가지므로, 증명되었다.(D가 $Supp(p_{data}) \cup Supp(p_g)$ 밖에서 정의될 필요가 없다고 하는데, 이게 어떻게 작용하는지는 이해가 잘 안된다.
 
