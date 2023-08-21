@@ -62,3 +62,11 @@ Swish는 smooth하기 때문에 Relu에 비해 더 optimize하기 좋고 initial
 Relu를 충분히 깊게 쌓는 것으로 임의의 연속함수를 표현할 수 있기 때문에 어떤 연속 활성화함수를 사용하더라도 Relu를 쓰는 것과 큰 차이가 없을 거라는 추측을 했었는데, smooth한 성질이 정말 Relu에 비해 더 좋은 결과를 내는게 맞을까? smooth하기 때문에 더 optimize하기 좋다는게 이해가 잘 되지 않는다. 
 
 또, Relu를 깊게 쌓는 것으로 연속 활성화함수를 사용하는 것과 같은 효과를 내는 해가 존재하더라도, 기존의 gradient desent로 그 최적 해를 찾아낼 수 있느냐? 는 다른 문제이기에, 생각해봐야 할 문제인 것 같다.
+
+
+Swish 비슷하지만, smooth하지 않은 함수를 생각했다.
+
+$\frac {2x} {1+e^{max(-x,0)}}
+
+위와 같이 식을 구성하면, 본 논문에서 얘기하는 Swish의 장점을 smooth함 외에 모두 갖는 Activation function이 된다.
+이제 이 Activation function을 활용해서 실험해보고 결과가 Swish보다 좋은지 확인해보자.
