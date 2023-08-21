@@ -66,7 +66,7 @@ Relu를 충분히 깊게 쌓는 것으로 임의의 연속함수를 표현할 �
 
 Swish 비슷하지만, smooth하지 않은 함수를 생각했다.
 
-$\large \frac {2x} {1+e^{max(-x,0)}}$
+$\large \frac {x} {1+e^{max(-x,0)}}$
 
-위와 같이 식을 구성하면, 본 논문에서 얘기하는 Swish의 장점을 smooth함 외에 모두 갖는 Activation function이 된다.
+위와 같이 식을 구성하면, 본 논문에서 얘기하는 Swish의 장점을 smooth함 외에 모두 갖는 Activation function이 된다.(연산면에선 오히려 더 빠를 것이라 생각된다.)
 이제 이 Activation function을 활용해서 실험해보고 결과가 Swish보다 좋은지 확인해보자.
