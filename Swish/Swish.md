@@ -51,7 +51,7 @@ Swish를 Relu로 대체하는 것은 신경망에서 Relu 대신 Swish로 교체
 
 우리 실험에선 Swish가 Relu에 비교해서 우수하다는 것을 보인다. 어떤 Activation function이 다른 Activation function보다 우수하다는 것을 보이는건, 학습이 여러 요인에 영향받기에 어려운 일이다. 하지만 unbounded above, bounded below, non-monotonic, and smooth한 Swish의 성질이 모두 이점을 갖는다 믿는다.
 
-Swish는 non-monotonicity하기 때문에 Relu나 다른 Activation function에 비해 initialization and learning rate에 덜 영향받는다.
+Swish는 non-monotonic하기 때문에 Relu나 다른 Activation function에 비해 initialization and learning rate에 덜 영향받는다.
 
 Swish는 smooth하기 때문에 Relu에 비해 더 optimize하기 좋고 initialization and learning rate에 대해 덜 민감하게 작용한다.
 
