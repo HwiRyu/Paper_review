@@ -139,6 +139,7 @@ $\partial f_\beta(x) \in \partial f$ if $\beta = arg sup_{\alpha \in A}f_\alpha(
 이제 D에 대한 U의 상한이 $p_g$에서 convex하고, Thm 1에 따라 unique global optima를 갖는다. 그러므로 충분히 작게 $p_g$를 update하는 것으로, $p_x$로 수렴시킬 수 있다. $\blacksquare$
 
 
-이로써 GAN 논문을 공부해보았다. 증명하면서 수학적으로 헷갈리는 부분들에 대해 더 자세히 공부하고, 추가해야겠다.
+이로써 GAN 논문을 공부해보았다. 증명하면서 수학적으로 헷갈리는 부분들에 대해 더 자세히 공부하고, 추가하겠다.
 
-해석학을 왜 배우는지 알거같다. 이제 GAN의 variation들을 공부한다.
+해석학을 왜 배우는지 알거같다. 확률론을 듣지않은 지난날을 후회한다.
+이제 GAN의 variation들을 공부한다.
