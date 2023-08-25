@@ -87,10 +87,57 @@ $=\int_x p_{\text{data}}(x) \log(D(x)) + p_g(x) \log(1 - D(x))dx$
 
 $E_{z \sim p_z(z)} \left[ \log(1 - D(G(z))) \right] = E_{x \sim p_g(x)} \left[ \log(1 - D(x)) \right]$ 이기 때문이다.
 
+($+$ 위 부분에 대해 자세히 설명하자면, 
+
+G가 어차피 Fixed되어있기 때문에 random noise distribution에서 하나 sampling해와서 $G(z)$에 넣는 것이나 이 random noise distribution으로부터 변환된 분포 $p_g(x)$에서 하나 sampling 하는 것이나 결국 같다는 것이다.)
+
 위 식은 미분하면 
 
-$D_G(x) = \frac {p_{data}(x)}{p_{data}(x) + p_g(x)}$
+$D^\star_G(x) = \frac {p_{data}(x)}{p_{data}(x) + p_g(x)}$
 
-에서 최댓값을 가지므로, 증명되었다.(D가 $Supp(p_{data}) \cup Supp(p_g)$ 밖에서 정의될 필요가 없다고 하는데, 이게 어떻게 작용하는지는 이해가 잘 안된다.
+에서 최댓값을 가지므로, 증명되었다.$\blacksquare$
 
-이후에도 증명이 여러개 있는데 이는 후에 작성한다.
+(D가 $Supp(p_{data}) \cup Supp(p_g)$ 밖에서 정의될 필요가 없다고 하는데, 이게 어떻게 작용하는지는 이해가 잘 안된다.
+
+
+![Alt text](image-3-1.PNG)
+Theorem 1을 보이기 전에, D를 훈련하는 것은 조건부확률 $P(Y = y|x)$ 를 추산하는 log-likelihood를 최대화하는 것으로도 해석할 수 있다. 이때 $Y$는 $x$가 $p_{data}$로부터 왔는지, $p_g$로부터 왔는지에 대한 확률을 의미한다. 
+
+Theorem 1. The global minimum of the virtual training criterion $C(G)$ is achieved if and only if $p_g = p_{data}$. At that point, $C(G)$ achieves the value $−log 4$.
+
+Proof. 
+
+$C(G) =$
+
+$\int_x p_{data}(x) log \frac {p_{data}(x)}{p_{data}(x)+p_g(x)} + \int_x p_{g}(x) log \frac {p_{data}(x)}{p_{data}(x)+p_g(x)} =$
+
+$= -log4 + KL(p_{data} || \frac {p_{data}(x)+p_g}{2}) + KL(p_{g} || \frac {p_{data}(x)+p_g}{2}) =$
+
+$-log4 + 2 \cdot JSD(p_{data} || p_g)$
+by Jenson-Shannon divergence.
+
+이때, Jenson-Shannon divergence에 따라 $p_{data} = p_g$ 일때에만 JSD가 0이 되므로, 이때 C(G)가 최솟값을 갖고 그 값은 $-log4$이다. $\blacksquare$
+
+위 명제와 정리를 통해 Gan의 Global Optim을 증명했다. 이제 논문에서 제시한 알고리즘을 통해 Converge하는지를 살펴보겠다.
+
+Proposition 2. 
+
+If $G$ and $D$ have enough capacity, and at each step of Algorithm 1, the discriminator is allowed to reach its optimum given $G$, and $p_g$ is updated so as to improve the criterion
+$E_{x∼p_{data}}[log D^\star_G(x)] + E_{x∼p_g}[log(1 − D^\star_G(x))]$
+then $p_g$ converges to $p_{data}$
+
+Proof.
+
+$p_g$에 대한 함수를 $V(G,D) = U(p_g,D)$이라 하자. 여기서 $U$는 $p_g$에서 convex하다.(왜?)
+
+convex fucntions의 supremum에서의 subderivatives은 함수가 최댓값을 가지는 점에서의 미분을 포함한다. 즉, 
+
+만약 $f(x) = sup_{\alpha \in A} f_\alpha(x)$ 이고, $f_\alpha(x)$가 모든 $\alpha$에 대해 $x$에서 convex하면,
+$\partial f_\beta(x) \in \partial f$ if $\beta = arg sup_{\alpha \in A}f_\alpha(x)$ 이다.(이거에 대한 증명은 없는것같다. 직접 해보고 추가해야겠다.)
+
+이제 D에 대한 U의 상한이 $p_g$에서 convex하고, Thm 1에 따라 unique global optima를 갖는다. 그러므로 충분히 작게 $p_g$를 update하는 것으로, $p_x$로 수렴시킬 수 있다. $\blacksquare$
+
+
+이로써 GAN 논문을 공부해보았다. 증명하면서 수학적으로 헷갈리는 부분들에 대해 더 자세히 공부하고, 추가해야겠다.
+
+해석학을 왜 배우는지 알거같다. 이제 GAN의 variation들을 공부한다.
