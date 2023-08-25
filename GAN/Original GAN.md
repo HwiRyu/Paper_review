@@ -101,6 +101,7 @@ $D^\star_G(x) = \frac {p_{data}(x)}{p_{data}(x) + p_g(x)}$
 
 
 ![Alt text](image-3-1.PNG)
+
 Theorem 1을 보이기 전에, D를 훈련하는 것은 조건부확률 $P(Y = y|x)$ 를 추산하는 log-likelihood를 최대화하는 것으로도 해석할 수 있다. 이때 $Y$는 $x$가 $p_{data}$로부터 왔는지, $p_g$로부터 왔는지에 대한 확률을 의미한다. 
 
 Theorem 1. The global minimum of the virtual training criterion $C(G)$ is achieved if and only if $p_g = p_{data}$. At that point, $C(G)$ achieves the value $−log 4$.
