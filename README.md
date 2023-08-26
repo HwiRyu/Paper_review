@@ -3,9 +3,9 @@ Mathematics department sophomore,
 Don't trust
 
 --------------------------------------------
-~~GAN~~
+[GAN](https://github.com/SpiralShot/Paper_review/blob/main/GAN/Original%20GAN.md)
 
-~~Swish~~
+[Swish](https://github.com/SpiralShot/Paper_review/blob/main/Swish/Swish.md)
 
 CGAN
 
