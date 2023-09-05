@@ -17,7 +17,7 @@ CycleGAN
 
 SinGAN
 
-ResNet
+[ResNet] (https://github.com/SpiralShot/Paper_review/blob/main/ResNet/ResNet.md)
 
 Batch normalization
 
