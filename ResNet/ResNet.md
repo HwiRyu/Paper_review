@@ -14,7 +14,7 @@ DCNN에서 갖는 문제를 해결한다.
 # Intro
 
 DCNN이 등장하여 image classification은 큰 성과를 얻을 수 있었다.
-Deeg한 layer를 통해 visual의 여러 분야에서 좋은 효과를 많이 보면서 신경망에서 Deep의 정도는 더욱 중요하게 되었다.
+Deep한 layer를 통해 visual의 여러 분야에서 좋은 효과를 많이 보면서 신경망에서 Deep의 정도는 더욱 중요하게 되었다.
 
 그에 따라 이런 질문을 할 수 있다.
 
