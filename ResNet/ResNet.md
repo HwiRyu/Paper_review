@@ -90,4 +90,8 @@ CNN을 Deep하게 쌓되, CNN layer들은 Residual을 적용한다. 이후 avg p
 
 이후 내용은 실험을 했고, 결과가 좋았다는 내용.
 
+![Alt text](image2.png)
+
+해당 신경망의 핵심은 이것이다. 높은 epoch에서 Deep할수록 degradation이 되어 Deep할수록 Train error가 커졌었는데, ResNet에선 이것이 역전되어 Deep할수록 더 나은 성능을 보인다는 것.
+
 이제 직접 ResNet을 구현해보고, 실험해보고, 가능하다면 왜 더 잘되는지 파악해보자.
