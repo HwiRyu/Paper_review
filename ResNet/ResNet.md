@@ -1,4 +1,4 @@
-# Residual Net: Paper review
+# Paper review : Residual Net
 해당 논문은 degradation을 해결하는 새로운 신경망을 소개한다.
 
 degradation은 gradient vanishing이나 overfitting과 다르게, 수렴이 되기는 하지만 어떤 epoch에서 Shallow Network보다 Deep Networt에서 traning error가 더 큰 문제다. 신경망에서 Depth의 중요성이 대두되는 시점에 이는 큰 문제고, 본 논문에선 Residual이라는 method를 통해 이를 해결한다.
