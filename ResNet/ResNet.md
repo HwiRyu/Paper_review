@@ -31,11 +31,11 @@ normalization과 SGD등과 같은 여러 방법들로 크게 해결되었다.(�
 
 (test error가 큰 것보다 사실 train error가 큰게 진짜 문제다.)
 
-이 현상은 모든 system( = Networkd?)을 optimize하는게 쉽지 않다는 것을 보여준다.
+이 현상은 모든 system( = Network?)을 optimize하는게 쉽지 않다는 것을 보여준다.
 
 이제 shallow한 신경망과 그에 대응되어 layer를 추가한 deep한 신경망을 생각하자. 이때, deep net은 shallow net에 대해 특정한 규칙을 갖고 layer를 추가하게 된다. identity mapping이다. Add layer 외에는 shallow net에서 learned layer를 가져와 그대로 사용한다.
 
-이떄 Net들의 solution이 존재한다면, Deep net이 Shallow net에 비해 더 낫거나, 적어도 덜한 성능을 보이진 않아야 한다. 그런데 우리의 실험에서, 지금의 solver(=Deep Net)은 shallow net에 비해 더 나은 solution을 찾아내지 못한다.
+이때 Net들의 solution이 존재한다면, Deep net이 Shallow net에 비해 더 낫거나, 적어도 덜한 성능을 보이진 않아야 한다. 그런데 우리의 실험에서, 지금의 solver(=Deep Net)은 shallow net에 비해 더 나은 solution을 찾아내지 못한다.
 
 본 논문에선 Residual layer를 사용하여 이 degradation을 해결하는 것을 다룬다.
 
