@@ -22,3 +22,8 @@ SinGAN
 Batch normalization
 
 Xaiver initialization
+
+SGD
+
+ADAM
+
