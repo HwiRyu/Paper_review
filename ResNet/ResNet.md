@@ -48,7 +48,6 @@ normalization과 SGD등과 같은 여러 방법들로 크게 해결되었다.(�
 > 1) 우리가 만든 extremely deep residual net은 optimize하기 쉽지만, 이에 대응되는 plain net은 높은 train error를 보인다.
 > 2) 우리가 만든 extremely deep residual net은 depth가 커지면 커질수록 더 나은 성능을 보인다. 이는 plain에 비해 실질적으로 낫다.
 
-이후는 ResNet이 대회나가서 다 이겨버렸다는 내용. 좋겠다
 
 
 
