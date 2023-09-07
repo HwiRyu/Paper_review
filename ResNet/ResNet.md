@@ -60,7 +60,9 @@ Definition of Asymptotically equivalent:
 
 If and only if $\frac{f(x)}{g(x)} \to 1$, then $f(x)$ and $g(x)$ are said to be asymptotically equivalent.
 
-(Asymptotically convergence 에 대한 내용은 잘 못찾겠다.)
+(Asymptotically convergence 에 대한 내용은 잘 못찾겠다.
+
++ 시간에 의존하는 문제들에서 Asymptotically라는 말을 사용한다.)
 
 여러개의 non-linear layer로 구성된 신경망이 어떤 복잡한 함수에 asymptotical하게 근사할 수 있다는 가정을 세우면, 이것은 곧 여러개의 non-linear layer로 구성된 신경망이 residual function(= $H(x) - x$, 이때 input과 output의 dimension은 같다고 가정)에 asymptotical하게 근사할 수 있다는 것과 같다.
 original function이 $H(x) = F(x) + x$이건 $H(x) = F(x)$이건 asymptotically approximate 할 수 있다는 것은 같지만, ResNet이 더 잘 된다는 데에서 차이가 발생한다. 
