@@ -57,9 +57,10 @@ $f(y) \geq f(x) + \nabla f(x)^T (y - x) + \frac{m}{2} \|y - x\|^2$ ($m$ = 0일�
 2) Thm 1-4에서 $\sum \rho_n = ∞$이 보장되었기에 수렴성이 증명되었다. 보장되지 않을땐 어떻게 되는가? 
 두 질문을 바로 해결해보기 전에, 증명을 정리하자.
 
-![[iamge3.png]]
+ ![Alt text](iamge3.png)
 
-![[iamge4.png]]
+ ![Alt text](iamge4.png)
+
 보기 편하게 옮겨적으려 했는데 그러기엔 너무 기호가 많았다.
 
 먼저, strong convex하다는게 정확히 무엇인가? convex는 주어진 domain에서 아래로 볼록한 것을 의미한다.
