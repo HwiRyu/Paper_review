@@ -117,7 +117,7 @@ $X_{n+1} = X_n - h\nabla f_{\gamma_n}(X_N)$  ($\gamma_n$ is uniform variables.)
 
 $Y_0 = X(0)$,
 
-$\tilde{Y}_{n+1} = Y_n - h \cdot \nabla f_{\gamma_n} (Y_n)$,a
+$\tilde{Y}_{n+1} = Y_n - h \cdot \nabla f_{\gamma_n} (Y_n)$
 
 $Y_{n+1} = Y_n - \frac{h}{2}[\nabla f_{\gamma_n} (Y_n) + \nabla f_{\gamma_n} (\tilde{Y}_{n+1})]$.
 
