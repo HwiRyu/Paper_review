@@ -115,9 +115,9 @@ $X_{n+1} = X_n - h\nabla f_{\gamma_n}(X_N)$  ($\gamma_n$ is uniform variables.)
 
 우리가 하고 싶은 것은 parameter $X_n$을 minimize하는 것이다. 이 $X_n$은 시간에 영향을 받아 flow?하므로 $t_{n+1} = (n+1)h: X_{n+1} ≃ X(t_{n+1})$ 과 같이 표현된다. $t$에 의존하는 $X_n$을 approximate 하는 많은 방법이 존재하지만, 그중 하나로 Runge-Kutta schemes를 사용할 수 있다. 
 
-$Y_0 = X(0)$,
+$Y_0 = X(0)$
 
-$\tilde{Y}_{n+1} = Y_n - h \cdot \nabla f_{\gamma_n} (Y_n)$
+$\tilde{Y}{n+1} = Y_n - h \cdot \nabla f_{\gamma_n} (Y_n)$
 
 $Y_{n+1} = Y_n - \frac{h}{2}[\nabla f_{\gamma_n} (Y_n) + \nabla f_{\gamma_n} (\tilde{Y}_{n+1})]$.
 
