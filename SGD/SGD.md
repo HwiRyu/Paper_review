@@ -1,7 +1,9 @@
 # Study for SGD
 
 Question.
-모든 상황에 대해 항상 좋은 Optimizer가 존재하는가?
+SGD는 Local minimum에 수렴하는가?
+Adam과 SGD의 구체적인 차이는 무엇인가?
+헤시안을 optimizer에 적용하면 어떻게 되는가.
 
 이 질문에 대한 답을 위해 SGD부터 Adam까지 공부한다.
 
@@ -10,7 +12,7 @@ $+$ Layer별로 학습을 다르게 한다면 에 대한 연구도 있을까?
 study paper list:
 1) The convergence of the Stochastic Gradient Descent (SGD) : a self-contained proof
 https://arxiv.org/pdf/2103.14350.pdf
-최신 논문이고, 가벼워보여 선택했다.
+최근 논문이고, 가벼워보여 선택했다. 함수가 strong-convex할 때에 어떤 조건의 Learning rate에 대해 SGD 알고리즘의 수렴성을 보인다.
 
 2) Stochastic Runge-Kutta methods and adaptive SGD-G2 stochastic gradient descent
 https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9412831&tag=1 1) 논문과 같은 저자다. 
