@@ -76,15 +76,135 @@ $\frac{f(y) - f(x)}{y - x} \geq \nabla f(x)^T + \frac{m}{2}{(y - x)}$
 
 즉 $m$ > 0인 m 이 존재하여 모든 $x, y$에 대해 위 식을 만족한다는 것은
 
-$f(tx+(1−t)y)≤tf(x)+(1−t)f(y)−t(1−t) \frac{m}{2}‖x−y‖^2$, α∈[0,1].
+$f(tx+(1−t)y)≤tf(x)+(1−t)f(y)−\frac{m}{2}‖x−y‖^2$, $t∈[0,1]$.
 
 이것과 동치가 되는데 두 점의 중점보다 그 중점의 함수값이 더 작아야 하는 기존 convex의 조건보다 더 강하게, 더 smooth하게 만드는 조건인 것으로 이해된다. Strong convex하면 convex한건 당연히 보장된다.
 
 convex하면 $∇^2f(x) \geq 0, \forall x \in dom(f)$이 만족하고, 
 strong convex하면 $∇^2f(x) \geq mI, \forall x \in dom(f)$ 이 된다
 
-strong convex가 되게 특이한 조건일줄 알았는데, convex한것보다 특별하진 않은 것 같다. 신경망에서 convex한 상황을 만드는게 훨씬 어려울 것 같다.
+'strong' convex가 되게 특이한 조건일줄 알았는데, convex한것보다 특별하진 않은 것 같다. 신경망에서 convex한 상황을 만드는게 훨씬 어려울 것 같다.
 
+이 증명은 여러가지를 선사한다. 그 중 하나는, 어떤 조건을 함수에서 $X$가 optimal one에 충분히 가까이 갔을 때, 학습을 계속하여 $X$를 optima에 수렴시킬 수 있다는 것이다. 
+
+# Theorem of sophomore: 
+Suppose function $f$ satisfies following property:
+1) $f$ is real continuous function on $R$.
+2) $f(\alpha)$ is unique local minimum of $f$ on $X$. 
+3) $f$ is twice differentiable on $X$.
+
+Then there exist $ε>0$ such that $f$ is convex on $S$ = $\{x:\| x - \alpha \| \leq ε\}$ ...(1)
+
+Proof: 
+First, $∇ f(\alpha) = lim_{h → 0} \frac {f(\alpha + h)-f(\alpha)}{h} = 0$.
+(Because if $h<0, \frac {f(\alpha + h)-f(\alpha)}{h} <0$ by 2), if $h>0, \frac {f(\alpha + h)-f(\alpha)}{h}>0$ and by 2), due to $f$ is differentiable on $X$.) ...(2)
+
+Second, Due to definition of second derivative, we can express
+$∇^2 f(\alpha) = lim_{h → 0} \frac {f(\alpha + h) + f(\alpha - h)-2f(\alpha)}{h^2}$ (Due to 3), $∇^2 f(\alpha)$ exist.) 
+2) $<=>$ for all $x \in X, f(\alpha) < f(x)$. Thus
+$∇^2 f(\alpha) = lim_{h → 0} \frac {f(\alpha + h) + f(\alpha - h)-2f(\alpha)}{h^2} \geq 0$.
+
+Now, ETS that near $\alpha$, $∇^2 f(x) \geq 0$ .
+
+To prove this by contradiction, Assume following statement is True:
+
+For all $ε>0$, $f$ is non-convex on $S = \{x: 0< \| x - \alpha \| \leq ε\}$. ...(3)
+
+This statement is false because:
+
+First, we fix $ε>0$, and let choose $ε_0 = inf\{\|x-\alpha\| : x \in S\}$.
+
+if $ε_0 ≠ 0$, then (3) is contradiction in $ε = ε_0$. Therefore, we see when $ε_0 = 0$.
+
+if $ε_0 = 0$ and $∇^2 f(\alpha) > 0$, then $ε_0$ is limit point of $\{\|x-\alpha\| : x \in S\}$.
+
+Thus there exists sequence $\{x_n\}$ in $S$ that converges to $\alpha$.
+
+Then,
+$∇^2 f(\alpha) = lim_{h → 0} \frac {f(\alpha + h) + f(\alpha - h)-2f(\alpha)}{h^2}$
+
+$<=>$ For all $ε>0$ there exist $\delta>0$ such that
+$\|h\|<\delta => \|∇^2 f(\alpha) -\frac {f(\alpha + h) + f(\alpha - h)-2f(\alpha)}{h^2}\| < ε$. ...(4)
+
+Due to $x_n \to \alpha$,
+Choose $\delta$ s.t (4), then
+there exist $N \in \text{N}$ such that $n \geq N => \|x_n - \alpha \| < \delta$. ...(5)
+
+By (4) and (5), consequently
+For all $ε>0$ there exist $N \in \text{N}$ such that
+$n \geq N => \|∇^2 f(\alpha) -\frac {f(x_n) + f(2\alpha - x_n)-2f(\alpha)}{(x_n - \alpha)^2}\| < ε$. ...(6)
+
+Due to $∇^2 f(\alpha) >0$ in this case, (6) is false when $ε = ∇^2 f(\alpha)$, thus (6) is false.
+
+if $ε_0 = 0$ and $∇^2 f(\alpha) = 0$, then $ε_0$ is limit point of $\{\|x-\alpha\| : x \in S\}$, whatever.
+
+Due to $∇^2 f(\alpha) = 0$ and  $f(\alpha$) is local minimum,
+there exist $ε_2$>0 such that $\int_\alpha^{\alpha + ε_2} ∇^2 f(\alpha) > 0, int_\alpha^{\alpha - ε_2} ∇^2 f(\alpha) < 0$.
+
+Therefore, there exist $ε_3>0$ such that $∇^2 f(\alpha) \geq 0$, this is contradiction with (3).
+
+Thus, there exist nonempty set $S = \{x: 0< \| x - \alpha \| < ε\}$ such that for all $x \in S$ $, ∇^2 f(x) < 0$ is false. Consequently, (1) is True.
+
+Proof end. □
+
+----------언젠가 쓰일지도 모를 증명의 잔해들-----------------------------
+Consequently, (3) is false.
+
+By (3), for all $n \in N$, $f(x_n)$ is not convex.
+
+
+this is contradiction due to $∇^2 f(\alpha) = lim_{h → 0} \frac {f(\alpha + h) + f(\alpha - h)-2f(\alpha)}{h^2} \geq 0$.
+First, $∇ f(\alpha) = lim_{h → 0} \frac {f(\alpha + h)-f(\alpha)}{h} = 0$.
+(Because if $h<0, \frac {f(\alpha + h)-f(\alpha)}{h} <0$ by 2), if $h>0, \frac {f(\alpha + h)-f(\alpha)}{h}>0$ and by 2), due to $f$ is differentiable on $X$.)
+4) $<=>$ there exist $ε>0$, for all $x \in S = \{x:\| x - \alpha \| \leq ε\}, f(\alpha) < f(x)$.
+
+
+Then there exist $ε>0$ such that $f$ is strong convex on $S$ = $\{x:\| x - \alpha \| \leq ε\}$ $(1)$
+
+Proof: 
+$f$ is strong convex $<=>$ $g(x) = f(x) - \frac {m}{2} \|x\|^2$ is convex with constant $m>0$.
+2) $<=>$ for all $x \in X, f(\alpha) < f(x)$.
+By definition of second derivative, we can express 
+$∇^2 g(x) = lim_{h → ∞} \frac {f(\alpha + h) + f(\alpha - h)-2f(\alpha)-\frac{m}{2} h^2} {h^2}$	
+		   $= lim_{h → ∞} \frac {f(\alpha + h) + f(\alpha - h)-2f(\alpha)} {h^2} - \frac{m}{2}$
+		   $= ∇^2 f(x) - \frac{m}{2}$.
+		   
+for $∇^2 g(x)$ is convex, $∇^2 g(x) = ∇^2 f(x) - \frac{m}{2} > 0$.
+
+4) $<=>$ there exist ε>0, for all $x \in S = \{x:\| x - \alpha \| \leq ε\}, f(\alpha) < f(x)$.
+
+
+$(1)$ $<=>$ there exist $ε>0$ 
+$\forall x, y \in S, ∃ m>0 \text{ such that }$ 
+$f(y) \geq f(x) + \nabla f(x)^T (y - x) + \frac{m}{2} \|y - x\|^2$ by 4).
+$f(tx+(1−t)y)≤tf(x)+(1−t)f(y)−\frac{m}{2}‖x−y‖^2$, $\forall t∈[0,1]$.
+
+To prove this by contradiction, Assume following statement is True:
+
+For all $ε>0$, there exist  $x, y \in S$ for all $m>0$ such that 
+$f(y) < f(x) + \nabla f(x)^T (y - x) + \frac{m}{2} \|y - x\|^2$. (2)
+
+Let's fix $ε_0$, then there exist $x_0, y_0 \in [\alpha - ε_0,\alpha + ε_0]$ such that (2).
+
+Next, $ε_1 = inf\{\|tx+(1−t)y-\alpha\|: t \text { satisfies (2) for } x_0, y_0\}$.
+Then else there exist $x_1, y_1 \in [\alpha - ε_1,\alpha + ε_1]$ such that (2).
+
+
+
+Next, $ε_1 = inf(\|\alpha - x_0\|, \|\alpha - y_0\| )$, then else there exist $x_1, y_1 \in [\alpha - ε_1,\alpha + ε_1]$ such that (2).
+
+Next, if $x_0, y_0 \geq \alpha$, then $ε_1 = \|min(x_0, y_0) - \alpha\|$, 
+
+else if $x_0, y_0 \leq \alpha$, then $ε_1 = \|max(x_0, y_0) - \alpha\|$, 
+
+
+
+
+%% 
+%else if $x_0 \geq \alpha \geq y_0$,  then $ε_1 = inf\{\|tx+(1−t)y-\alpha\|: t \text { satisfies (2) for } x_0, y_0\}$.
+ %%
+
+----------------------------------------------------------
 # Summary of 2) Stochastic Runge-Kutta methods and adaptive SGD-G2 stochastic gradient descent
 Euler method의 변형인 Runge-Kutta method를 응용한 SGD 방식을 소개한다. 학습률을 Runge-Kutta method를 통해 스스로 조절하는, momentum SGD 같은 느낌인 것 같은데, 읽어봐야 알겠다.
 
