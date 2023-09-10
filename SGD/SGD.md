@@ -93,7 +93,7 @@ Suppose function $f$ satisfies following property:
 2) $f(\alpha)$ is unique local minimum of $f$ on $X$. 
 3) $f$ is twice differentiable on $X$.
 
-Then there exist $ε>0$ such that $f$ is convex on $S$ = $\{x:\| x - \alpha \| \leq ε\}$ ...(1)
+Then there exist $ε>0$ such that $f$ is convex on $S$ = $[x:\| x - \alpha \| \leq ε]$ ...(1)
 
 Proof: 
 First, $∇ f(\alpha) = lim_{h → 0} \frac {f(\alpha + h)-f(\alpha)}{h} = 0$.
@@ -108,11 +108,11 @@ Now, ETS that near $\alpha$, $∇^2 f(x) \geq 0$ .
 
 To prove this by contradiction, Assume following statement is True:
 
-For all $ε>0$, $f$ is non-convex on $S = \{x: 0< \| x - \alpha \| \leq ε\}$. ...(3)
+For all $ε>0$, $f$ is non-convex on $S = [x: 0< \| x - \alpha \| \leq ε]$. ...(3)
 
 This statement is false because:
 
-First, we fix $ε>0$, and let choose $ε_0 = inf\{\|x-\alpha\| : x \in S\}$.
+First, we fix $ε>0$, and let choose $ε_0 = inf[\|x-\alpha\| : x \in S]$.
 
 if $ε_0 ≠ 0$, then (3) is contradiction in $ε = ε_0$. Therefore, we see when $ε_0 = 0$.
 
@@ -143,7 +143,7 @@ there exist $ε_2$>0 such that $\int_\alpha^{\alpha + ε_2} ∇^2 f(\alpha) > 0,
 
 Therefore, there exist $ε_3>0$ such that $∇^2 f(\alpha) \geq 0$, this is contradiction with (3).
 
-Thus, there exist nonempty set $S = \{x: 0< \| x - \alpha \| < ε\}$ such that for all $x \in S$ $, ∇^2 f(x) < 0$ is false. Consequently, (1) is True.
+Thus, there exist nonempty set $S = [x: 0< \| x - \alpha \| < ε]$ such that for all $x \in S$ $, ∇^2 f(x) < 0$ is false. Consequently, (1) is True.
 
 Proof end. □
 
