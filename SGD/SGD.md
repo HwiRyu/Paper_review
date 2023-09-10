@@ -139,7 +139,7 @@ Due to $∇^2 f(\alpha) >0$ in this case, (6) is false when $ε = ∇^2 f(\alpha
 if $ε_0 = 0$ and $∇^2 f(\alpha) = 0$, then $ε_0$ is limit point of $\{\|x-\alpha\| : x \in S\}$, whatever.
 
 Due to $∇^2 f(\alpha) = 0$ and  $f(\alpha$) is local minimum,
-there exist $ε_2$>0 such that $\int_\alpha^{\alpha + ε_2} ∇^2 f(\alpha) > 0, int_\alpha^{\alpha - ε_2} ∇^2 f(\alpha) < 0$.
+there exist $ε_2$>0 such that $\int_\alpha^{\alpha + ε_2} ∇^2 f(\alpha) > 0, int_\alpha^{\alpha - ε_2} ∇^2 f(\alpha) > 0$.
 
 Therefore, there exist $ε_3>0$ such that $∇^2 f(\alpha) \geq 0$, this is contradiction with (3).
 
