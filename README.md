@@ -23,7 +23,7 @@ Batch normalization
 
 Xaiver initialization
 
-SGD
+[SGD](https://github.com/HwiRyu/Paper_review/blob/main/SGD/SGD.md)
 
 ADAM
 
