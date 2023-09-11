@@ -149,7 +149,8 @@ Thus, there exist nonempty set $S = [x: 0< \| x - \alpha \| < ε]$ such that for
 
 Proof end. □
 
-----------잔해들-----------------------------
+--------------------------증명의 잔해들-----------------------------
+
 Consequently, (3) is false.
 
 By (3), for all $n \in N$, $f(x_n)$ is not convex.
