@@ -110,7 +110,7 @@ Now, ETS that near $\alpha$, $∇^2 f(x) \geq 0$ .
 
 To prove this by contradiction, Assume following statement is True:
 
-For all $ε>0$, there exist $x \in S = \{x: 0< \| x - \alpha \| \leq ε\}$such that$f(x)$ is non-convex. ...(3)
+For all $ε>0$, there exist $x \in S = \{x: 0< \| x - \alpha \| \leq ε\}$ such that $f(x)$ is non-convex. ...(3)
 
 This statement is false because:
 
