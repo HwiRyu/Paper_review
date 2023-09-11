@@ -95,7 +95,8 @@ Suppose function $f$ satisfies following property:
 
 Then there exist $ε>0$ such that $f$ is convex on $S$ = $[x:\| x - \alpha \| \leq ε]$ ...(1)
 
-Proof: 
+## Proof: 
+
 First, $∇ f(\alpha) = lim_{h → 0} \frac {f(\alpha + h)-f(\alpha)}{h} = 0$.
 (Because if $h<0, \frac {f(\alpha + h)-f(\alpha)}{h} <0$ by 2), if $h>0, \frac {f(\alpha + h)-f(\alpha)}{h}>0$ and by 2), due to $f$ is differentiable on $X$.) ...(2)
 
