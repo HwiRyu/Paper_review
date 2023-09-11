@@ -110,7 +110,7 @@ Now, ETS that near $\alpha$, $∇^2 f(x) \geq 0$ .
 
 To prove this by contradiction, Assume following statement is True:
 
-For all $ε>0$, there exist $x \in S = [x: 0< \| x - \alpha \| \leq ε]\text{ such that } f(x)$ is non-convex. ...(3)
+For all $ε>0$, there exist $x \in S = [x: 0< \| x - \alpha \| \leq ε] \text{ such that } f(x)$ is non-convex. ...(3)
 
 This statement is false because:
 
@@ -145,7 +145,7 @@ there exist $ε_2>0$ such that $\int_\alpha^{\alpha + ε_2} ∇^2 f(\alpha) > 0,
 
 Therefore, there exist $ε_3>0$ such that $∇^2 f(\alpha) \geq 0$, this is contradiction with (3).
 
-Thus, there exist nonempty set $S = [x: 0< \| x - \alpha \| < ε]$ such that for all $x \in S$ $, ∇^2 f(x) < 0$ is false. Consequently, (1) is True.
+Thus, Negation of (1) is false. Consequently, (1) is True.
 
 Proof end. □
 
