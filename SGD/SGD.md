@@ -10,17 +10,17 @@ Adam과 SGD의 구체적인 차이는 무엇인가?
 $+$ Layer별로 학습을 다르게 한다면 에 대한 연구도 있을까?
 
 study paper list:
-1) The convergence of the Stochastic Gradient Descent (SGD) : a self-contained proof //
+1) The convergence of the Stochastic Gradient Descent (SGD) : a self-contained proof 
 https://arxiv.org/pdf/2103.14350.pdf
 최근 논문이고, 가벼워보여 선택했다. 함수가 strong-convex할 때에 어떤 조건의 Learning rate에 대해 SGD 알고리즘의 수렴성을 보인다.
 
-2) Stochastic Runge-Kutta methods and adaptive SGD-G2 stochastic gradient descent //
+2) Stochastic Runge-Kutta methods and adaptive SGD-G2 stochastic gradient descent 
 https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9412831&tag=1 1) 논문과 같은 저자다. 
 
-3) Stochastic Gradient Descent Tricks   //
+3) Stochastic Gradient Descent Tricks   
 https://www.microsoft.com/en-us/research/wp-content/uploads/2012/01/tricks-2012.pdf
 
-4) ADAM: A METHOD FOR STOCHASTIC OPTIMIZATION//
+4) ADAM: A METHOD FOR STOCHASTIC OPTIMIZATION
 https://arxiv.org/pdf/1412.6980.pdf
 # Summary of 1) The convergence of the Stochastic Gradient Descent (SGD) : a self-contained proof
 
