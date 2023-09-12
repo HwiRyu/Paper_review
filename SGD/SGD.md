@@ -96,7 +96,8 @@ Suppose function $f$ satisfies following property:
 Then there exist $ε>0$ such that $f$ is convex on $S$ = $[x:\| x - \alpha \| \leq ε]$ ...(1)
 
 ## Proof:
-(Proof)[https://github.com/HwiRyu/Math-Analysis/blob/main/Proof%20of%20convexity/convex.md]
+[Proof](https://github.com/HwiRyu/Math-Analysis/blob/main/Proof%20of%20convexity/convex.md)
+
 --------------------------증명의 잔해들-----------------------------
 
 First, $∇ f(\alpha) = lim_{h → 0} \frac {f(\alpha + h)-f(\alpha)}{h} = 0$.
